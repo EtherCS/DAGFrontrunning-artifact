@@ -1,12 +1,7 @@
 # No Fish Is Too Big for Flash Boys! Frontrunning on DAG-based Blockchains - ACSAC 2025 Artifact
 This is the repository for the Artifact Evaluation of ACSAC 2025  proceeding: "[No Fish Is Too Big for Flash Boys! Frontrunning on DAG-based Blockchains](https://eprint.iacr.org/2024/1496)".
 
-# Table of Contents
-
-## Artifact Overview
-This artifact contains experiment data for all figures, an implementation of all proposed attacks in the paper. 
-
-The experiment data can be found in the directory ```./benchmark/results```. We evaluate our attacks under two environments: a single local machine and AWS. Thus, there are two catergories of result files: *local-** (results under the local machine environment) and *remote-** (results under the AWS environment). The name format of the result file indicates the configuration of the evaluation.
+This branch is the attack evaluation on Tusk.
 
 ## Quick Start
 
@@ -60,10 +55,10 @@ This command may take a long time the first time you run it (compiling rust code
  End-to-end latency: 1,286 ms
 
  + ATTACK:
- Rushed front-running rate: 71.43% (15/21) 
+ Speculative front-running rate: 71.43% (15/21) 
 -----------------------------------------
 
-Cumulative pickmin front-running results: 71.43% (15/21) 
+Cumulative speculative front-running results: 71.43% (15/21) 
 ```
 
 
