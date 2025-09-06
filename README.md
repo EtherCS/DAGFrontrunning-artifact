@@ -60,10 +60,10 @@ This command may take a long time the first time you run it (compiling rust code
  End-to-end latency: 1,286 ms
 
  + ATTACK:
- Rushed front-running rate: 71.43% (15/21) 
+ Speculative front-running rate: 71.43% (15/21) 
 -----------------------------------------
 
-Cumulative pickmin front-running results: 71.43% (15/21) 
+Cumulative speculative front-running results: 71.43% (15/21) 
 ```
 
 
