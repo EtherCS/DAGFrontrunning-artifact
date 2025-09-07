@@ -381,7 +381,7 @@ class LogParser:
         sluggish_succ_num, sluggish_total = self._sluggish_attack_results()
         speculative_succ_num, speculative_total = self._speculative_attack_results()
         if monitor_total != 0:  # no front-running attack
-            attack_print = f"Non-strategy front-running rate: {round(monitor_succ_num/monitor_total*100, 2):,}% ({monitor_succ_num:,}/{monitor_total:,})"
+            attack_print = f"Baseline front-running rate: {round(monitor_succ_num/monitor_total*100, 2):,}% ({monitor_succ_num:,}/{monitor_total:,})"
         elif fissure_total != 0:  # fissure front-running attack
             attack_print = f"Fissure front-running rate: {round(fissure_succ_num/fissure_total*100, 2):,}% ({fissure_succ_num:,}/{fissure_total:,})"
         elif sluggish_total != 0:  # sluggish front-running attack
