@@ -1,0 +1,6 @@
+# About the code
+
+Our code is built on several projects. Thus, we place our code in multiple branches rather than the main branch. Specifically,
+
+- [Tusk](https://github.com/EtherCS/DAGFrontrunning-artifact/tree/tusk) branch provides the implementation of frontrunning evaluation on Tusk.
+- [bullshark](https://github.com/EtherCS/DAGFrontrunning-artifact/tree/bullshark) branch provides the implementation of frontrunning evaluation on Bullshark.
