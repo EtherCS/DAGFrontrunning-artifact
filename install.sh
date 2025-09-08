@@ -40,7 +40,6 @@ elif [ "$OS" = "Linux" ]; then
 	echo "[INFO] Detected Linux. Using apt-get for dependencies."
 	sudo apt-get update
 	sudo apt-get -y upgrade
-	sudo apt-get -y autoremove
 	sudo apt-get -y install build-essential cmake clang tmux wget
 	# Install Rust
 	if ! command -v rustup >/dev/null 2>&1; then
