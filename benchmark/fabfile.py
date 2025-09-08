@@ -342,14 +342,14 @@ def articrash(ctx, debug=True):
 def artiworker(ctx, debug=True):
     # benchmark format: (attack_type, frontrunners, crashes, workers, nodes, runs)
     benchmark_configurations = [
-        (10, 3, 0, 1, 10, 4),
-        (10, 3, 0, 4, 10, 4),
-        (1, 3, 0, 1, 10, 4),
-        (1, 3, 0, 4, 10, 4),
-        (2, 3, 0, 1, 10, 4),
-        (2, 3, 0, 4, 10, 4),
-        (3, 3, 0, 1, 10, 4),
-        (3, 3, 0, 4, 10, 4),
+        (10, 3, 0, 2, 10, 4),
+        (10, 3, 0, 8, 10, 4),
+        (1, 3, 0, 2, 10, 4),
+        (1, 3, 0, 8, 10, 4),
+        (2, 3, 0, 2, 10, 4),
+        (2, 3, 0, 8, 10, 4),
+        (3, 3, 0, 2, 10, 4),
+        (3, 3, 0, 8, 10, 4),
     ]
     run_with_configurations(benchmark_configurations, debug)
 

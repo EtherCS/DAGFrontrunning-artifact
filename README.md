@@ -24,7 +24,7 @@ pip3 install -r requirements.txt
 
 ## Benchmark in a local machine
 
-## Quick Start (Recommend running)
+### Quick Start (Recommend running)
 
 If it is your first time running our project, we highly recommend running a simple test by executing the following command (under `./benchmark`). It will compile rust code, making the running time of future evaluations more precise (by not re-compile the code).
 
@@ -77,7 +77,7 @@ You can also customize the parameters in `local` function in `fabfile.py` to eva
 
 In the following sections, we provide some commands (with customized parameters) for Artifact Evaluation. The experiment results will be used to validate our claims.
 
-## Evaluate the impact of crashed nodes (Claim 1)
+### Evaluate the impact of crashed nodes (Claim 1)
 
 First, we validate **Claim 1**, by showing that the attack success rates (ASRs) increase overall for all attacking strategies with an increasing ratio of crashed nodes (i.e., *f_l/n*).
 
@@ -101,7 +101,7 @@ Speculative (crash node ratio: 0/10): 61.54%
 Speculative (crash node ratio: 2/10): 63.51%
 ```
 
-## Evaluate the impact of workers (Claim 2)
+### Evaluate the impact of workers (Claim 2)
 
 For **Claim 2**, we will show that the speculative attack benefits from the number of workers (i.e., *f_w*) mostly.
 
@@ -115,17 +115,17 @@ It will evaluate the baseline and all three frontrunning strategies under differ
 
 ```bash
 ...
-Baseline (workers: 1): 55.38%
-Baseline (workers: 4): 43.86%
-Fissure (workers: 1): 44.44%
-Fissure (workers: 4): 58.33%
-Sluggish (workers: 1): 36.36%
-Sluggish (workers: 4): 51.52%
-Speculative (workers: 1): 54.05%
-Speculative (workers: 4): 77.5
+Baseline (workers: 2): 47.52%
+Baseline (workers: 8): 55.77%
+Fissure (workers: 2): 40.62%
+Fissure (workers: 8): 60.61%
+Sluggish (workers: 2): 46.03%
+Sluggish (workers: 8): 40.91%
+Speculative (workers: 2): 53.37%
+Speculative (workers: 8): 85.56%
 ```
 
-## Evaluate the impact of frontrunning attackers (Claim 3)
+### Evaluate the impact of frontrunning attackers (Claim 3)
 
 For **Claim 3**, we will show that the fissure attack benefits from the ratio of frontrunning attackers (i.e., *f_a/n*) mostly.
 
@@ -148,7 +148,7 @@ Speculative (frontrunners: 3): 50.35%
 Speculative (frontrunners: 5): 62.79%
 ```
 
-## Repeat Evaluation
+### Repeat Evaluation
 
 In the above experiments, each measurement only contains 0~30 times of attacks. This could save your time in getting a rough comparison (which already show the effectiveness of the attacks), but might have deviations. If you wish to get a more precise result, you could repeat this progress multiple times, and the results are cumulative. In our paper, each measure contains at least 500 times of attacks.
 
