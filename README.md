@@ -87,18 +87,18 @@ Under `./benchmark`, run the following command:
 fab articrash
 ```
 
-It will evaluate the baseline and all three frontrunning strategies under different *f_l/n* (including 0 and 0.2). Each measurement will run 1 minute, and the total runtime will be approximately 8 (=1\*2\*4) minutes. After it terminates, it will output the comparison results:
+It will evaluate the baseline and all three frontrunning strategies under different *f_l/n* (including 0 and 0.2). Each measurement will run 1 minute and repreats 4 times. Thus, the expected total runtime is approximately 32 (=4\*2\*4) minutes. After it terminates, it will output the comparison results:
 
 ```bash
 ...
-Baseline (crash node ratio:0/10): %
-Baseline (crash node ratio:2/10): %
-Fissure (crash node ratio:0/10): %
-Fissure (crash node ratio:2/10): %
-Sluggish (crash node ratio:0/10): %
-Sluggish (crash node ratio:2/10): %
-Speculative (crash node ratio:0/10): %
-Speculative (crash node ratio:2/10): %
+Baseline (crash node ratio: 0/10): 38.33%
+Baseline (crash node ratio: 2/10): 39.42%
+Fissure (crash node ratio: 0/10): 68.42%
+Fissure (crash node ratio: 2/10): 79.31%
+Sluggish (crash node ratio: 0/10): 45.83%
+Sluggish (crash node ratio: 2/10): 44.14%
+Speculative (crash node ratio: 0/10): 58.21%
+Speculative (crash node ratio: 2/10): 70.83%
 ```
 
 ## Evaluate the impact of workers (Claim 2)
@@ -111,18 +111,18 @@ Under `./benchmark`, run the following command:
 fab artiworker
 ```
 
-It will evaluate the baseline and all three frontrunning strategies under different *f_w* (i.e., *f_w=1, 4*). Each measurement will run 1 minute, and the total runtime will be approximately 8 (=1\*2\*4) minutes. After it terminates, it will output the comparison results:
+It will evaluate the baseline and all three frontrunning strategies under different *f_w* (i.e., *f_w=1, 4*). Each measurement will run 1 minute and repreats 4 times. Thus, the expected total runtime is approximately 32 (=4\*2\*4) minutes. After it terminates, it will output the comparison results:
 
 ```bash
 ...
-Baseline (workers: 1): %
-Baseline (workers: 4): %
-Fissure (workers: 1): %
-Fissure (workers: 4): %
-Sluggish (workers: 1): %
-Sluggish (workers: 4): %
-Speculative (workers: 1): %
-Speculative (workers: 4): %
+Baseline (workers: 2): 43.4%
+Baseline (workers: 8): 29.17%
+Fissure (workers: 2): 66.67%
+Fissure (workers: 8): 66.67%
+Sluggish (workers: 2): 55.0%
+Sluggish (workers: 8): 54.17%
+Speculative (workers: 2): 51.52%
+Speculative (workers: 8): 72.6%
 ```
 
 ## Evaluate the impact of frontrunning attackers (Claim 3)
@@ -135,17 +135,18 @@ Under `./benchmark`, run the following command:
 fab artifrontrunner
 ```
 
-It will evaluate the baseline and all three frontrunning strategies under different *f_a/n* (i.e., *f_a/n=0.3, 0.5*). Each measurement will run 1 minute, and the total runtime will be approximately 8 (=1\*2\*4) minutes. After it terminates, it will output the comparison results:
+It will evaluate the baseline and all three frontrunning strategies under different *f_a/n* (i.e., *f_a/n=0.3, 0.5*). Each measurement will run 1 minute and repreats 4 times. Thus, the expected total runtime is approximately 32 (=4\*2\*4) minutes. After it terminates, it will output the comparison results:
 
 ```bash
-Baseline (frontrunners: 3): %
-Baseline (frontrunners: 5): %
-Fissure (frontrunners: 3): %
-Fissure (frontrunners: 5): %
-Sluggish (frontrunners: 3): %
-Sluggish (frontrunners: 5): %
-Speculative (frontrunners: 3): %
-Speculative (frontrunners: 5): %
+...
+Baseline (frontrunners: 3): 39.71%
+Baseline (frontrunners: 5): 36.49%
+Fissure (frontrunners: 3): 42.86%
+Fissure (frontrunners: 5): 57.83%
+Sluggish (frontrunners: 3): 40.0%
+Sluggish (frontrunners: 5): 38.46%
+Speculative (frontrunners: 3): 49.32%
+Speculative (frontrunners: 5): 55.45%
 ```
 
 ## Repeat Evaluation

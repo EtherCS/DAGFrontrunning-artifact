@@ -332,14 +332,14 @@ def cumulative(ctx, attack, arbitragers, faults, workers, nodes):
 def articrash(ctx, debug=True):
     # benchmark format: (attack_type, frontrunners, crashes, workers, nodes, runs)
     benchmark_configurations = [
-        (10, 5, 0, 2, 10, 1),
-        (10, 5, 2, 2, 10, 1),
-        (1, 5, 0, 2, 10, 1),
-        (1, 5, 2, 2, 10, 1),
-        (2, 5, 0, 2, 10, 1),
-        (2, 5, 2, 2, 10, 1),
-        (3, 5, 0, 2, 10, 1),
-        (3, 5, 2, 2, 10, 1),
+        (10, 5, 0, 2, 10, 4),
+        (10, 5, 2, 2, 10, 4),
+        (1, 5, 0, 2, 10, 4),
+        (1, 5, 2, 2, 10, 4),
+        (2, 5, 0, 2, 10, 4),
+        (2, 5, 2, 2, 10, 4),
+        (3, 5, 0, 2, 10, 4),
+        (3, 5, 2, 2, 10, 4),
     ]
     run_with_configurations(benchmark_configurations, debug)
 
@@ -387,14 +387,14 @@ def articrash(ctx, debug=True):
 def artiworker(ctx, debug=True):
     # benchmark format: (attack_type, frontrunners, crashes, workers, nodes, runs)
     benchmark_configurations = [
-        (10, 3, 0, 1, 10, 1),
-        (10, 3, 0, 4, 10, 1),
-        (1, 3, 0, 1, 10, 1),
-        (1, 3, 0, 4, 10, 1),
-        (2, 3, 0, 1, 10, 1),
-        (2, 3, 0, 4, 10, 1),
-        (3, 3, 0, 1, 10, 1),
-        (3, 3, 0, 4, 10, 1),
+        (10, 3, 0, 2, 10, 4),
+        (10, 3, 0, 8, 10, 4),
+        (1, 3, 0, 2, 10, 4),
+        (1, 3, 0, 8, 10, 4),
+        (2, 3, 0, 2, 10, 4),
+        (2, 3, 0, 8, 10, 4),
+        (3, 3, 0, 2, 10, 4),
+        (3, 3, 0, 8, 10, 4),
     ]
     run_with_configurations(benchmark_configurations, debug)
 
@@ -431,14 +431,14 @@ def artiworker(ctx, debug=True):
 def artifrontrunner(ctx, debug=True):
     # benchmark format: (attack_type, frontrunners, crashes, workers, nodes, runs)
     benchmark_configurations = [
-        (10, 3, 0, 1, 10, 1),
-        (10, 5, 0, 1, 10, 1),
-        (1, 3, 0, 1, 10, 1),
-        (1, 5, 0, 1, 10, 1),
-        (2, 3, 0, 1, 10, 1),
-        (2, 5, 0, 1, 10, 1),
-        (3, 3, 0, 1, 10, 1),
-        (3, 5, 0, 1, 10, 1),
+        # (10, 3, 0, 2, 10, 4),
+        # (10, 5, 0, 2, 10, 4),
+        (1, 3, 0, 2, 10, 4),
+        # (1, 5, 0, 2, 10, 4),
+        (2, 3, 0, 2, 10, 4),
+        # (2, 5, 0, 2, 10, 4),
+        # (3, 3, 0, 2, 10, 4),
+        # (3, 5, 0, 2, 10, 4),
     ]
     run_with_configurations(benchmark_configurations, debug)
 
