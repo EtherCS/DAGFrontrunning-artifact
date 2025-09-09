@@ -7,6 +7,28 @@ command_exists() {
 	command -v "$1" >/dev/null 2>&1
 }
 
+# Save the original branch
+ORIGINAL_BRANCH=$(git branch --show-current)
+echo "[INFO] Original branch: $ORIGINAL_BRANCH"
+
+# Cleanup function
+cleanup() {
+	echo "[INFO] Cleaning up..."
+	# Return to original directories (if pushd was used)
+	while popd > /dev/null 2>&1; do
+		echo "[INFO] Returned to previous directory"
+	done
+	
+	# Return to original branch
+	if [[ -n "${ORIGINAL_BRANCH:-}" ]]; then
+		echo "[INFO] Switching back to original branch: $ORIGINAL_BRANCH"
+		git checkout "$ORIGINAL_BRANCH" > /dev/null 2>&1 || echo "[WARNING] Could not switch back to original branch"
+	fi
+}
+
+# Set trap to run cleanup on exit
+trap cleanup EXIT
+
 # Go to the root directory of the project
 pushd "$(dirname "$0")/../.." > /dev/null
 echo "[INFO] Current directory: $(pwd)"
@@ -44,9 +66,11 @@ fi
 python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
 
-echo "[INFO] Running benchmark for Claim 1..."
+echo "[INFO] Running benchmark for Claim 3..."
 if ! command_exists fab; then
 	echo "[ERROR] fab (Fabric) not found!" >&2
 	exit 1
 fi
 fab artifrontrunner
+
+echo "[INFO] Script completed successfully."
