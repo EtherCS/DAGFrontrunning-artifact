@@ -50,5 +50,3 @@ if ! command_exists fab; then
 	exit 1
 fi
 fab artiworker
-popd > /dev/null
-popd > /dev/null

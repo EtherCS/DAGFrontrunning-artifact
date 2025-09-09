@@ -10,7 +10,7 @@ This claim will involve two branches in this repo: tusk and bullshark. In the `R
 
 ### Evaluate Tusk
 
-First, we evaluate the attacks in Tusk. In a new terminal window, under this directory, execute:
+First, we evaluate the attacks in Tusk. In a new terminal window, under this directory (i.e.,`./claims/claim1` of the main branch), execute:
 
 ```bash
 bash run_tusk.sh
@@ -34,7 +34,7 @@ These will be the expected results for Claim 1 validation. In particular, the re
 
 ### Evaluate Bullshark
 
-Then, we evaluate the attack in Bullshark. In a new terminal window, under this directory, execute:
+Then, we evaluate the attack in Bullshark. In a new terminal window, navigate to the same directory (i.e.,`./claims/claim1` of the main branch), execute:
 
 ```bash
 bash run_bullshark.sh

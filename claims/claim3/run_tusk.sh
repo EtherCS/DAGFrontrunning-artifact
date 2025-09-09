@@ -50,5 +50,3 @@ if ! command_exists fab; then
 	exit 1
 fi
 fab artifrontrunner
-popd > /dev/null
-popd > /dev/null
