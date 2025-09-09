@@ -7,8 +7,9 @@ command_exists() {
 	command -v "$1" >/dev/null 2>&1
 }
 
-# Go to the root directory
-pushd "$(dirname "$0")/../../.." > /dev/null
+# Go to the root directory of the project
+pushd "$(dirname "$0")/../.." > /dev/null
+echo "[INFO] Current directory: $(pwd)"
 
 echo "[INFO] Switching to 'bullshark' branch..."
 git checkout bullshark
