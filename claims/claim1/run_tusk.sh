@@ -11,6 +11,24 @@ command_exists() {
 ORIGINAL_BRANCH=$(git branch --show-current)
 echo "[INFO] Original branch: $ORIGINAL_BRANCH"
 
+# Cleanup function
+cleanup() {
+	echo "[INFO] Cleaning up..."
+	# Return to original directories (if pushd was used)
+	while popd > /dev/null 2>&1; do
+		echo "[INFO] Returned to previous directory"
+	done
+	
+	# Return to original branch
+	if [[ -n "${ORIGINAL_BRANCH:-}" ]]; then
+		echo "[INFO] Switching back to original branch: $ORIGINAL_BRANCH"
+		git checkout "$ORIGINAL_BRANCH" > /dev/null 2>&1 || echo "[WARNING] Could not switch back to original branch"
+	fi
+}
+
+# Set trap to run cleanup on exit
+trap cleanup EXIT
+
 # Go to the root directory of the project
 pushd "$(dirname "$0")/../.." > /dev/null
 echo "[INFO] Current directory: $(pwd)"
@@ -55,12 +73,4 @@ if ! command_exists fab; then
 fi
 fab articrash
 
-# Cleanup: return to original directory and branch
-echo "[INFO] Returning to original directory..."
-popd > /dev/null  # Return from benchmark directory
-popd > /dev/null  # Return from project root directory
-
-echo "[INFO] Switching back to original branch: $ORIGINAL_BRANCH"
-git checkout "$ORIGINAL_BRANCH"
-
-echo "[INFO] Script completed successfully. Returned to original branch and directory."
+echo "[INFO] Script completed successfully."
